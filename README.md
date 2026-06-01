@@ -2,7 +2,7 @@
 
 A simple and clean web application of a To-do List
 
-🌐 **Live Demo:** add link later
+🌐 **Live Demo:** (https://klartqoraiko.github.io/To-do-list/)
 
 ---
 
@@ -39,7 +39,7 @@ Get Kids from school                 X
 Just open the live demo link above, or clone the repository and open `index.html` in your browser.
 
 ```bash
-git clone https://github.com/KlartqOrAiko/FinancialHelper-Website-.git
+git clone https://github.com/KlartqOrAiko/To-do-list.git
 ```
 
 ---
