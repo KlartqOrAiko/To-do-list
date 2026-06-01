@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0px;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 600px;
+        }
+        li {
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    margin-bottom: 5px;
+    border-radius: 4px;
+        }
+        li button {
+            background-color: #dc3545;
+            border: none;            
+            color: white;
+            padding: 5px 10px;
+        }
+    </style>  
+    <body>
+            <h1>To-Do List</h1>
+            <div>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+</div>
+            <ul id="taskList"></ul>
+            <script>
+                function addTask() {
+                    var taskInput = document.getElementById("taskInput");
+                    var task = taskInput.value;
+                    if (task) {
+                        var taskList = document.getElementById("taskList");
+                        var listItem = document.createElement("li");
+                        const deletebutton = document.createElement("button");
+                        deletebutton.textContent = "X";
+                        listItem.textContent = task;
+                        listItem.onclick = function(){
+                            listItem.style.backgroundColor = "green";
+                            listItem.style.color = "white";
+                        }
+                        deletebutton.onclick = function(e) {
+                            e.stopPropagation();
+                            taskList.removeChild(listItem);
+                        };
+                        listItem.appendChild(deletebutton);
+                        taskList.appendChild(listItem);
+                        taskInput.value = "";
+                    }
+                }            
+            </script>
+        </body>
+</html>
